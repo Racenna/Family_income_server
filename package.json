@@ -1,0 +1,28 @@
+{
+  "name": "family_income_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Racenna/Family_income_server.git"
+  },
+  "author": "Vlad Kosolapov <vlad.kosolapov48@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Racenna/Family_income_server/issues"
+  },
+  "homepage": "https://github.com/Racenna/Family_income_server#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
