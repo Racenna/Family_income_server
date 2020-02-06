@@ -3,12 +3,12 @@ const dotenv = require("dotenv");
 // db connect
 const connectMongoDB = require("./src/dbconnect");
 
-// routes
-app.use("/api/auth", require("./src/routes/auth.routes"));
+const app = express();
 
 dotenv.config();
 
-const app = express();
+// routes
+app.use("/api/auth", require("./src/routes/auth.routes"));
 
 app.listen(process.env.PORT, () => {
   connectMongoDB();
