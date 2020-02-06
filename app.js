@@ -1,8 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
-
 // db connect
 const connectMongoDB = require("./src/dbconnect");
+
+// routes
+app.use("/api/auth", require("./src/routes/auth.routes"));
+
 dotenv.config();
 
 const app = express();
