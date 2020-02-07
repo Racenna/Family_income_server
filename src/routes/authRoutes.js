@@ -2,12 +2,8 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
-
 //model
 const User = require("../models/User");
-
-dotenv.config();
 
 // @post /api/auth/register
 router.post(

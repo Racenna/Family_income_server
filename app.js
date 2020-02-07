@@ -2,15 +2,15 @@ const express = require("express");
 const dotenv = require("dotenv");
 // db connect
 const connectMongoDB = require("./src/dbconnect");
+// routes
+const authRoutes = require("./src/routes/authRoutes");
 
 const app = express();
+dotenv.config();
 
 app.use(express.json({ extended: true }));
 
-dotenv.config();
-
-// routes
-app.use("/api/auth", require("./src/routes/auth.routes"));
+app.use("/api/auth", authRoutes);
 
 app.listen(process.env.PORT, () => {
   connectMongoDB();
