@@ -14,7 +14,7 @@ router.post(
   "/register",
   [
     check("email", "Invalid email").isEmail(),
-    check("pwd", "Minimum password length 8 characters")
+    check("pwd", "Minimum password length 8 characters").isLength({ min: 8 })
   ],
   async (req, res) => {
     try {

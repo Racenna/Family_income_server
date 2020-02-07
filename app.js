@@ -5,6 +5,8 @@ const connectMongoDB = require("./src/dbconnect");
 
 const app = express();
 
+app.use(express.json({ extended: true }));
+
 dotenv.config();
 
 // routes
