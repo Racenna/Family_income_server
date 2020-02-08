@@ -26,6 +26,14 @@ router.post("/create", verifyToken, async (req, res) => {
   }
 });
 
-// router.post("/", verifyToken, async (req, res) => {});
+// api/budget
+router.get("/", verifyToken, async (req, res) => {
+  try {
+    const budgets = await Budget.find({ owner: req.user.userId });
+    res.status(200).json(budgets);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
+  }
+});
 
 module.exports = router;
