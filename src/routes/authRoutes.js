@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 //model
 const User = require("../models/User");
 
-// @post /api/auth/register
+// /api/auth/register
 router.post(
   "/register",
   [
@@ -42,7 +42,7 @@ router.post(
   }
 );
 
-// @post /api/auth/register
+// /api/auth/register
 router.post(
   "/login",
   [

@@ -5,7 +5,7 @@ const verifyToken = require("./verifyToken");
 //model
 const Budget = require("../models/Budget");
 
-// api/budget/creat
+// /api/budget/creat
 router.post("/create", verifyToken, async (req, res) => {
   try {
     const { date, income, expenses, amount } = req.body;
@@ -26,7 +26,7 @@ router.post("/create", verifyToken, async (req, res) => {
   }
 });
 
-// api/budget
+// /api/budget
 router.get("/", verifyToken, async (req, res) => {
   try {
     const budgets = await Budget.find({ owner: req.user.userId });
