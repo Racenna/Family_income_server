@@ -42,7 +42,7 @@ router.post(
   }
 );
 
-// /api/auth/register
+// /api/auth/login
 router.post(
   "/login",
   [

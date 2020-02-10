@@ -1,6 +1,4 @@
 const router = require("express").Router();
-const { check, validationResult } = require("express-validator");
-const jwt = require("jsonwebtoken");
 const verifyToken = require("./verifyToken");
 //model
 const Budget = require("../models/Budget");
@@ -9,6 +7,12 @@ const Budget = require("../models/Budget");
 router.post("/create", verifyToken, async (req, res) => {
   try {
     const { date, income, expenses, amount } = req.body;
+
+    if (income < 0 || expenses < 0) {
+      res
+        .status(400)
+        .json({ message: "Invalid income or expenses. Must be at least 0" });
+    }
 
     const budget = new Budget({
       date,
